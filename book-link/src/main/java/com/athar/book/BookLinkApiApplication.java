@@ -10,7 +10,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableJpaAuditing
+/**
+ * EnableJpaAuditing just work for two fields in entities
+ * 1. createdAt
+ * 2. lastModifiedAt
+ * To tell to spring what is auditorAwareRef we should add the bean name that created earlier to the annotation
+ */
+@EnableJpaAuditing(auditorAwareRef = "auditorAware")
 @EnableAsync
 public class BookLinkApiApplication {
 
