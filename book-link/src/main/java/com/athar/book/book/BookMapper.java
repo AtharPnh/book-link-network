@@ -1,5 +1,6 @@
 package com.athar.book.book;
 
+import com.athar.book.file.FileUtils;
 import com.athar.book.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .ownerName(book.getOwner().getName())
-                //.cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
                 .build();
     }
 
