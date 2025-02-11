@@ -8,6 +8,8 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.0/spring-core-6.2.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-core-6.2.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-core-6.2.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
