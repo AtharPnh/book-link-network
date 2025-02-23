@@ -10,7 +10,7 @@ import {BookResponse} from '../../../../services/models/book-response';
 export class BookCardComponent {
   private _book: BookResponse = {};
   private _bookCover: string | undefined;
-  private _manage: boolean = false;
+  private _manage = false;
 
 
   get book(): BookResponse {

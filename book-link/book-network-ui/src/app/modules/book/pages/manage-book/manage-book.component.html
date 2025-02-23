@@ -1,0 +1,60 @@
+<div class="p-2">
+  <h2>Manage My Book</h2>
+  <hr>
+  <div class="alert alert-danger mt-2" role="alert" *ngIf="errorMsg.length">
+    <p class="m-0 p-0" *ngFor="let msg of errorMsg">{{msg}}</p>
+  </div>
+  <div class="d-flex gap-2">
+    <div class="col-3">
+      <img class="rounded-1" width="100%" height="100%"
+           [src]="selectedPicture || 'https://source.unsplash.com/user/c_v_r/1900x800'" alt="...">
+      <div class="mt-2">
+        <input
+          (change)="onFileSelected($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+          accept="image/*"
+        >
+      </div>
+    </div>
+    <div class="col-9">
+      <form class="row g-3">
+        <div class="col-12">
+          <label for="title" class="form-label">Title</label>
+          <input [(ngModel)]="bookRequest.title" name="title" class="form-control" id="title" placeholder="Book title"
+                 type="text">
+        </div>
+        <div class="col-6">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input [(ngModel)]="bookRequest.isbn" name="isbn" class="form-control" id="isbn" placeholder="ISBN"
+                 type="text">
+        </div>
+        <div class="col-6">
+          <label for="author" class="form-label">Author name</label>
+          <input [(ngModel)]="bookRequest.authorName" name="authorName" class="form-control" id="author"
+                 placeholder="Author name"
+                 type="text">
+        </div>
+        <div class="col-12">
+          <label for="synopsis" class="form-label">Synopsis</label>
+          <textarea [(ngModel)]="bookRequest.synopsis" name="synopsis" class="form-control" id="synopsis"
+                    row="4"></textarea>
+        </div>
+        <div class="col-12">
+          <input [(ngModel)]="bookRequest.shareable" name="shareable" class="form-check-input" id="shareme"
+                 type="checkbox">
+          <label for="shareme" class="form-check-label">Share me</label>
+        </div>
+        <div class="d-flex justify-content-end gap-2 col-12">
+          <button class="btn btn-outline-primary" type="submit" (click)="saveBook()">
+            <i class="fas fa-save"></i>&nbsp;Save
+          </button>
+          <a class="btn btn-link text-danger" routerLink="/books/my-books">
+            <i class="fas fa-time"></i>&nbsp;Cancel
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
