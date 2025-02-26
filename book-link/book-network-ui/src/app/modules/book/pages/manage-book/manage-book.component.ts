@@ -3,6 +3,7 @@ import {BookRequest} from '../../../../services/models/book-request';
 import {FormsModule} from '@angular/forms';
 import {BookService} from '../../../../services/services/book.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BookResponse} from '../../../../services/models/book-response';
 
 @Component({
   selector: 'app-manage-book',
@@ -63,7 +64,7 @@ export class ManageBookComponent implements OnInit {
       this.bookService.findBookById({
         'book-id': bookId
       }).subscribe({
-        next: (book => {
+        next: (book: BookResponse) => {
           this.bookRequest = {
             id: book.id,
             authorName: book.authorName as string,
@@ -72,7 +73,10 @@ export class ManageBookComponent implements OnInit {
             title: book.title as string,
             shareable: book.shareable
           }
-        })
+          if (book.cover) {
+            this.selectedPicture = 'data:image/jpg;base64,' + book.cover;
+          }
+        }
       });
     }
   }

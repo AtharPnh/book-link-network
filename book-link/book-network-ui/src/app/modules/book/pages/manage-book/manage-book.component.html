@@ -22,27 +22,27 @@
       <form class="row g-3">
         <div class="col-12">
           <label for="title" class="form-label">Title</label>
-          <input [(ngModel)]="bookRequest.title" name="title" class="form-control" id="title" placeholder="Book title"
+          <input [()ngModel]="bookRequest.title" name="title" class="form-control" id="title" placeholder="Book title"
                  type="text">
         </div>
         <div class="col-6">
           <label for="isbn" class="form-label">ISBN</label>
-          <input [(ngModel)]="bookRequest.isbn" name="isbn" class="form-control" id="isbn" placeholder="ISBN"
+          <input [()ngModel]="bookRequest.isbn" name="isbn" class="form-control" id="isbn" placeholder="ISBN"
                  type="text">
         </div>
         <div class="col-6">
           <label for="author" class="form-label">Author name</label>
-          <input [(ngModel)]="bookRequest.authorName" name="authorName" class="form-control" id="author"
+          <input [()ngModel]="bookRequest.authorName" name="authorName" class="form-control" id="author"
                  placeholder="Author name"
                  type="text">
         </div>
         <div class="col-12">
           <label for="synopsis" class="form-label">Synopsis</label>
-          <textarea [(ngModel)]="bookRequest.synopsis" name="synopsis" class="form-control" id="synopsis"
+          <textarea [()ngModel]="bookRequest.synopsis" name="synopsis" class="form-control" id="synopsis"
                     row="4"></textarea>
         </div>
         <div class="col-12">
-          <input [(ngModel)]="bookRequest.shareable" name="shareable" class="form-check-input" id="shareme"
+          <input [()ngModel]="bookRequest.shareable" name="shareable" class="form-check-input" id="shareme"
                  type="checkbox">
           <label for="shareme" class="form-check-label">Share me</label>
         </div>
